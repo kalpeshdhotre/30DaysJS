@@ -7,3 +7,4 @@
 - `git add -A`  stages all changes in repository including subdir;
 
 - Git does not track empty directories.
+- learn more about git PUSH command 
