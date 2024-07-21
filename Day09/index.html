@@ -6,8 +6,33 @@
     <title>Document</title>
     <style>
       .greet {
-        color: aqua;
-        border: 2px solid red;
+        color: goldenrod;
+        border: 2px solid grey;
+        margin: auto;
+        text-align: center;
+      }
+      .frStyle {
+        background-color: gray;
+        color: palegoldenrod;
+        padding: 5px;
+        text-align: center;
+        margin: 10px;
+        border: 2px solid rgb(103, 175, 93);
+        border-radius: 15px;
+        padding: 15px;
+      }
+      body {
+        background-color: gray;
+        color: palegoldenrod;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 18px;
+      }
+      .button {
+        padding: 8px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+        border-radius: 5px;
+        margin: 10px;
       }
     </style>
   </head>
@@ -36,6 +61,40 @@
       <li>Number 5</li>
     </ul>
     <img id="image" src="./img/image1.jpg" alt="" width="200px" />
+
+    <!-- Feature Request assignment -->
+
+    <!-- Feature Request 1 -->
+    <div id="fr1" class="frStyle">
+      <h2>Feature Request 1</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At laboriosam eligendi alias ad facere aut id porro quas vitae in, quo excepturi est voluptates molestias quam deserunt. Porro, minus
+        aut!
+      </p>
+      <button class="button" onclick="changeContent()">Change Text Content</button>
+    </div>
+
+    <!-- Feature Request 2 & 3 -->
+    <div id="fr2" class="frStyle">
+      <h2>Feature Request 2 & 3</h2>
+      <h3>Add new div and remove HTML element</h3>
+      <div>This is div 1</div>
+      <button class="button" onclick="createDiv()">Create New div</button>
+      <button class="button" onclick="deleteLastDiv()">Delete Last div</button>
+    </div>
+
+    <!-- Feature Request 4 -->
+    <div id="fr4" class="frStyle">
+      <h2>Feature Request 4</h2>
+      <button class="button" onclick="changeAttribute()">Change attribute</button>
+    </div>
+
+    <!-- Feature Request 5 -->
+    <div id="fr5" class="frStyle">
+      <h2>Feature Request 5</h2>
+      <img id="fr5Image" src="./img/image1.jpg" alt="" width="300px" />
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>

@@ -79,11 +79,37 @@ image.addEventListener("mouseleave", () => {
 
 // Feature Request:
 // 1. Text Content Manipulation Script  : Write a script that selects an HTML element by its ID and changes its text content.
+function changeContent() {
+  element = document.querySelector("#fr1 p");
+  element.textContent = `"Lorem, ipsum dolor sit amet consectetur
+  adipisicing.Rem, exercitationem necessitatibus
+  ipsam hic aperiam quia.Sit blanditiis nisi ab
+  iusto optio vel."`;
+}
 
 // 2. Element Creation Script           : Create a script that demonstrates creating a new div element and appending it to the body.
-
+function createDiv() {
+  let element = document.getElementById("fr2");
+  let newDiv = document.createElement("div");
+  newDiv.textContent = "new div created";
+  element.append(newDiv);
+}
 // 3. Element Removal Script            : Write a script that selects an HTML element and removes it from the DOM.
-
+function deleteLastDiv() {
+  let element = document.querySelector("#fr2 div:last-of-type");
+  element.remove();
+}
 // 4. Attribute Modification Script     : Create a script that changes the attributes of an HTML element.
+function changeAttribute() {
+  let element = document.getElementById("fr4");
+  element.className == "frStyle" ? (element.className = "noclass") : (element.className = "frStyle");
+}
 
 // 5. Event Handling Script             : Write a script that adds event listeners to HTML elements to change their content or style based on user interactions.
+let fr5Image = document.getElementById("fr5Image");
+fr5Image.addEventListener("mouseover", () => {
+  fr5Image.src = "./img/image2.jpg";
+});
+fr5Image.addEventListener("mouseleave", () => {
+  fr5Image.src = "./img/image1.jpg";
+});
