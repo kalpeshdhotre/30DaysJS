@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .greet {
+        color: aqua;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="greet" id="hello">Hello This is Day</h1>
+    <p id="para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, illo porro voluptates laboriosam ullam accusamus veniam placeat harum? Hic esse magni excepturi iusto facere, laborum
+      neque, labore odit necessitatibus totam error vitae quam temporibus ut dignissimos autem veniam! Delectus, dicta? Nobis autem sint numquam repellat consequuntur, repellendus quo sunt.
+    </p>
+    <button onclick="changeTextByID()">Change by ID</button>
+    <button onclick="changeTextbyClass()">Change by Class</button>
+    <button onclick="addNewDiv()">Add new DIV</button>
+    <button onclick="addNewElement()">New element</button>
+    <button onclick="deleteUl()">Delete entire list</button>
+    <button onclick="deleteLastChild()">Delete Last Child</button>
+    <button onclick="changeImage()">Change Image</button>
+    <button onclick="addCssClass()">Add CSS Class</button>
+    <button onclick="removeCssClass()">Remove CSS Class</button>
+    <button id="changePara">Change Paragraph Text</button>
+
+    <ul id="ulList">
+      <li>Number 1</li>
+      <li>Number 2</li>
+      <li>Number 3</li>
+      <li>Number 4</li>
+      <li>Number 5</li>
+    </ul>
+    <img id="image" src="./img/image1.jpg" alt="" width="200px" />
+    <script src="./script.js"></script>
+  </body>
+</html>
