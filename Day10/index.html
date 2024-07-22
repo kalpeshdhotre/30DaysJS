@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 10 of 30 Days of JS Challenge</title>
+    <style>
+      body {
+        color: #222f3e;
+        font-family: "Trebuchet MS";
+      }
+      .divStyle {
+        text-align: center;
+        border: 2px solid #222f3e;
+        border-radius: 15px;
+        width: 75%;
+        margin: auto;
+        padding: 10px;
+        margin-top: 15px;
+      }
+      .btn {
+        padding: 8px;
+        border-radius: 5px;
+        margin: 3px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+        background-color: #2c2c54;
+        color: beige;
+      }
+      .li {
+        cursor: default;
+      }
+    </style>
+  </head>
+  <body style="background-color: gray">
+    <h1 style="text-align: center">Day 10 of 30 Days of JS Challenge</h1>
+    <!-- Task 1 -->
+    <div id="divTask1" class="divStyle">
+      <h2>Feature Request 1 (Task 1)</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nemo, quia omnis ipsa laborum consequatur perferendis est facere dolorem corporis delectus ipsum nihil repudiandae
+        consectetur ratione ab optio mollitia unde!
+      </p>
+      <button id="btnTask1" class="btn">Change Content</button>
+    </div>
+
+    <!-- Task 2 -->
+    <div id="divTask2" class="divStyle">
+      <h2>Feature Request 2 (Task 2)</h2>
+      <img id="imgTask2" src="./img/image1.jpg" alt="" height="200px" width="250px" style="visibility: visible" />
+    </div>
+
+    <!-- Task 3 & 4-->
+    <div id="divTask3" class="divStyle">
+      <h2>Feature Request 2 - (Task 3 & 4)</h2>
+      <input id="inputTask3" type="text" style="width: 200px; height: 200px; background-color: #f7dc6f; border: none" />
+    </div>
+
+    <!-- Task 5 & 6 -->
+    <div id="divTask5" class="divStyle">
+      <h2>Feature Request 3 - (Task 5 & 6)</h2>
+      <input id="inputTask5" type="text" style="width: 200px; height: 200px" />
+      <h3>Input box contents will appear below after keyup event</h3>
+      <p id="paraTask5"></p>
+    </div>
+
+    <!-- Task 7 -->
+    <div id="divTask7" class="divStyle">
+      <h2>Activity 4 (Task 7)</h2>
+      <form id="formTask7" action="">
+        <label for="instructions">Enter Data Below</label><br />
+        <input type="text" />
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Task 8 -->
+    <div id="divTask8" class="divStyle">
+      <h2>Activity 4 - (Task 8)</h2>
+      <p id="paraTask8">Select Option below to Display here</p>
+      <form id="formTask8" action="">
+        <select name="options" id="dropDownTask8" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+          <option value="option5">Option 5</option>
+        </select>
+      </form>
+    </div>
+
+    <!-- Task 9 & 10 -->
+    <div id="divTask9" class="divStyle">
+      <h2>Feature Request 5 - (Task 9 & 10)</h2>
+      <h3>click item to log the same to console</h3>
+      <button id="btnTask9" class="btn">Add New Element to List</button>
+      <ul id="ulTask9" style="text-align: left; margin-left: 130px">
+        <li class="li">Item 1</li>
+        <li class="li">Item 2</li>
+        <li class="li">Item 3</li>
+        <li class="li">Item 4</li>
+        <li class="li">Item 5</li>
+      </ul>
+    </div>
+    <script src="./tasks.js"></script>
+  </body>
+</html>
