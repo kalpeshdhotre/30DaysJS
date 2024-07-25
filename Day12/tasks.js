@@ -117,8 +117,7 @@ const fnTask7 = async (flg) => {
     console.log(error);
   }
 };
-
-fnTask7("false");
+let flag = false;
 
 // Activity 5: Graceful Error Handling in Fetch
 // • Task 8: Use the fetch API to request data from an invalid URL and handle the error using .catch(). Log an appropriate error message to the console.
