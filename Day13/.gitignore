@@ -1,1 +1,3 @@
 node_modules/
+bundler/
+.parcel-cache/
