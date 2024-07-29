@@ -4,10 +4,10 @@
 // console.log(arrayTask4);
 
 function revString(string) {
-  let str = [...string];
-  const ele = revString(str.pop());
-  console.log(ele);
-  return ele;
+  if (string.length <= 1) {
+    return string;
+  }
+  return revString(string.slice(1)) + string[0];
 }
 
-revString("abcd");
+console.log(revString("abcd"));
