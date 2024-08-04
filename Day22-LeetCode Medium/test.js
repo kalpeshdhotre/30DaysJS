@@ -4,3 +4,5 @@
 //   console.log(current.value);
 //   current = current.next;
 // }
+// Avoid magic numbers do
+// this instead
