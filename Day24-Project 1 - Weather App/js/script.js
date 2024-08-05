@@ -1,7 +1,8 @@
-const apiKey = "6c37719f4f0045b0c860c6c18584d8db"; // Replace with your OpenWeatherMap API key
+const apiKey = process.env.OPENWEATHERMAP_API_KEY;
 const city = "dombivli"; // Replace with the city you want to check
 
 function checkWeather(city) {
+  console.log(apiKey);
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
     .then((response) => response.json())
     .then((data) => {
