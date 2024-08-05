@@ -1,4 +1,4 @@
-const apiKey = process.env.OPENWEATHERMAP_API_KEY;
+const apiKey = "";
 const city = "dombivli"; // Replace with the city you want to check
 
 function checkWeather(city) {
