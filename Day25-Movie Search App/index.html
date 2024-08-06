@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Movie Search</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="appTitle">Movie Search App</h1>
+
+      <!-- search Button and Input Box -->
+      <div id="searchSection">
+        <input type="text" id="searchMovie" placeholder="Enter Movie name" />
+        <button id="btnSearch">Search</button>
+      </div>
+
+      <!-- Section which displays poster and bsic movie information -->
+      <div id="movieData">
+        <div>
+          <img id="moviePoster" src="./images/movie.jpg" alt="Movie Poster" />
+        </div>
+        <div id="movieInfo">
+          <h2>Title: <span id="movieTitle"></span></h2>
+          <h2>Released Year: <span id="releaseYear"></span></h2>
+        </div>
+      </div>
+
+      <!-- Section displays addtional information on btn press -->
+      <div id="moreInfo">
+        <h2>Released Date: <span id="releasedDate"></span></h2>
+        <h2>Duration: <span id="runtime"></span></h2>
+        <h2>Genre: <span id="genre"></span></h2>
+        <h2>Director: <span id="director"></span></h2>
+        <h2>Writer: <span id="writer"></span></h2>
+        <h2>Actors: <span id="actors"></span></h2>
+        <h2>Plot: <span id="plot"></span></h2>
+        <h2>Language: <span id="language"></span></h2>
+        <h2>Country: <span id="country"></span></h2>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./js/script.js"></script>
+</html>
