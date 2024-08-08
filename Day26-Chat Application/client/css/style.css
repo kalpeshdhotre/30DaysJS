@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Sintony:wght@400;700&display=swap");
+
+body {
+  background-color: #454545;
+}
+
+#container {
+  margin: 0 auto;
+  width: 75%;
+  /* border: solid 2px rgb(42, 45, 37); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75vh;
+}
+
+/* Testing of username and message seperation */
+.message-username {
+  /* font-weight: bold; */
+  font-size: 15px;
+  margin-right: 5px;
+  font-family: "Sintony";
+  color: #ffffff;
+  /* background-color: #979696; */
+  border-radius: 5px;
+}
+
+.message-content {
+  color: #ffffff;
+  font-family: "Abel";
+  /* font-weight: bold; */
+  font-size: 25px;
+  background-color: #005c4b;
+  border-radius: 7px;
+  padding: 2px 10px 2px 5px;
+}
+/* end */
+
+#messages {
+  /* border: solid 2px rgb(255, 47, 47); */
+  display: flex;
+  flex-direction: column-reverse;
+  /* justify-content: flex-end; */
+  height: 92%;
+  background-color: #979696;
+  margin: 0 5px;
+  padding: 5px 20px;
+  overflow-y: auto;
+  /* overflow-x: hidden; */
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.message {
+  display: flex;
+  margin: 5px 0;
+  /* margin-top: auto; */
+}
+
+.sent {
+  justify-content: flex-end;
+  font-size: 20px;
+  font-family: "abel";
+}
+
+.received {
+  justify-content: flex-start; /* Aligns received messages to the left */
+  font-size: 20px;
+  font-family: "abel";
+}
+#userInput {
+  /* border: solid 2px rgb(47, 61, 255); */
+  height: 8%;
+  display: flex;
+}
+#userMsg {
+  width: 80%;
+  resize: none;
+  font-family: "Sintony";
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px;
+  align-content: center;
+}
+
+#btnSend,
+#btnDisconnect,
+#btnConnect {
+  width: 20%;
+  font-family: "Sintony";
+  font-size: 20px;
+  margin: 5px 5px 5px 0;
+  /* height: 75%; */
+}
+
+#appStatus {
+  /* width: 100%; */
+  background-color: #838483;
+  margin: 0 5px 5px 5px;
+  text-align: center;
+  /* align-items: center; */
+  font-family: "Sintony";
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#userName {
+  height: 75%;
+  margin: 5px 0;
+  font-family: "Sintony";
+  font-size: 20px;
+  padding-left: 5px;
+  border-radius: 5px;
+  background-color: #454545;
+  color: antiquewhite;
+}
