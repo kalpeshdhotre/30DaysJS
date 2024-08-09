@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h2>Task Management</h2>
+    </div>
+    <div id="container">
+      <!-- User new task entry or edit form section -->
+      <form id="taskForm">
+        <div class="form-group">
+          <label for="taskTitle">Enter task title:</label>
+          <input id="taskTitle" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="taskDescription">Enter Task description:</label>
+          <input id="taskDescription" type="text" spellcheck="true" required />
+        </div>
+        <div class="form-group">
+          <label for="dueDate">Due Date:</label>
+          <input type="date" name="dueDate" id="dueDate" required />
+        </div>
+        <button class="btn" id="btnAddTask">Add Task</button>
+      </form>
+      <!-- Task list -->
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskTableBody">
+          <!-- Task rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
