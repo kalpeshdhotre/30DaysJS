@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Sintony:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  margin: 15px auto;
+}
+#logo {
+  width: 75px;
+  /* border-radius: 50%; */
+}
+#navMenu ul {
+  display: flex;
+  list-style-type: none;
+  font-family: "Ubuntu";
+  font-size: 18px;
+}
+
+#navMenu ul li {
+  margin: 0 25px;
+}
+
+#navOther ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px; /* Adjust spacing between icons */
+  padding-right: 15px;
+}
+
+#navOther li {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background-color: #0070c0;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 5px;
+  font-size: 12px;
+  font-family: "Sintony";
+  /* Hide by default when the cart is empty */
+  display: none;
+  cursor: pointer;
+}
+
+#cart-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Show badge if there's at least one item in the cart  */
+#navOther li.has-items .cart-badge {
+  display: inline;
+}
+
+/* Offer Banner  */
+#offer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  margin: 10px 0;
+  padding: 10px 10px;
+  background-color: #0070c0;
+  color: #ffffff;
+  font-family: "Ubuntu";
+}
+
+#socialLinks {
+  position: absolute;
+  left: 0;
+  margin-left: 140px;
+  display: flex;
+  gap: 15px;
+  font-size: 25px;
+}
+@keyframes smoothBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+#scrollBanner {
+  text-align: center;
+  flex-grow: 1;
+  font-family: "Sintony";
+  animation: smoothBlink 2s infinite;
+  color: rgb(255, 242, 95);
+  letter-spacing: 4px;
+  font-size: 17px;
+}
+
+.fade-slider {
+  /* border: 2px solid red; */
+  position: relative;
+  width: 85vw; /* Full viewport width */
+  height: 320px; /* Full viewport height, adjust as needed */
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.fade-slides {
+  display: flex;
+  width: 100%; /* 100% per image for 3 images */
+  /* animation: slide 19s infinite; */
+}
+
+.fade-slides img {
+  width: 100vw; /* Full viewport width */
+  height: 100%; /* Adjust height automatically to maintain aspect ratio */
+  flex: 1 0 100%;
+  object-fit: contain; /* Ensure image covers the container without distortion */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  33% {
+    transform: translateX(0%);
+  }
+  66% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+#productCatalogue {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 85vw;
+  /* border: solid 2px red; */
+  margin: 15px auto;
+  /* background-color: rgb(232, 232, 232); */
+  border-radius: 10px;
+}
+
+#productCard {
+  /* border: 2px solid rgb(112, 112, 112); */
+  margin: 5px;
+  /* width: 25%; */
+  height: 400px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  font-family: "Sintony";
+  padding: 5px 3px;
+}
+
+#productCard img {
+  width: 250px;
+  height: 65%;
+  /* border: 2px solid red; */
+}
+
+#productCard p {
+  margin: 0 3px;
+  font-size: 14px;
+  font-family: "Abel";
+}
+
+#productCard .prdPrice {
+  margin: 5px 0;
+  font-size: 28px;
+  color: #0070c0;
+  font-weight: bold;
+  font-family: "Sintony";
+}
+#productCard button {
+  width: 100px;
+  height: 25px;
+  font-size: 15px;
+  padding: 2px 0;
+}
+
+#productCard .prdName {
+  font-family: "Ubuntu";
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #454545;
+}
