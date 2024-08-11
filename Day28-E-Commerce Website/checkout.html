@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart CheckOut</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://kit.fontawesome.com/c1360362d9.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="header">
@@ -18,16 +19,16 @@
         </ul>
       </div>
       <div id="navOther">
-        <!-- Optional if you want the cart icon here as well -->
         <!-- <ul>
           <li><i class="fa-regular fa-user"></i></li>
           <li class="has-items">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart-badge"></span>
-          </li>
-        </ul> -->
+          </li> 
+        </ul>  -->
       </div>
     </div>
+    <!-- Banner which displays Sociel Media icons and flash offer -->
     <div id="offer">
       <div id="socialLinks">
         <i class="fa-brands fa-youtube"></i>
@@ -36,37 +37,69 @@
       <div id="scrollBanner">Sale 50% off for Independance day</div>
     </div>
 
-    <!-- Checkout section -->
-    <div id="checkout">
-      <h1>Checkout</h1>
-      <table id="cart-items">
+    <!-- image display product / brand information -->
+    <div class="fade-slider">
+      <div class="fade-slides">
+        <img src="./images/feat1.jpg" alt="Image 1" />
+        <img src="./images/feat2.jpg" alt="Image 2" />
+        <img src="./images/feat3.jpg" alt="Image 3" />
+      </div>
+    </div>
+
+    <!-- Table to display item in cart -->
+    <div class="cart-container">
+      <table>
         <thead>
           <tr>
-            <th>Product</th>
+            <th>Item Name</th>
+            <th>Qty</th>
             <th>Price</th>
-            <th>Quantity</th>
             <th>Total</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Cart items will be populated here -->
+          <!-- Rows can be added here -->
+          <!-- <tr>
+            <td class="prdImageName">
+              <span><img src="./images/products/prd1.jpg" alt="" /></span>Example Item
+            </td>
+            <td>
+              <i class="fa-solid fa-plus"></i>
+              <span id="qty">2</span>
+              <i class="fa-solid fa-minus"></i>
+              <i class="fa-solid fa-trash"></i>
+            </td>
+            <td>$10.00</td>
+            <td>$10.00</td>
+          </tr> -->
         </tbody>
       </table>
-      <div id="checkout-summary">
-        <p>Total Quantity: <span id="total-quantity">0</span></p>
-        <p>Total Amount: Rs. <span id="total-amount">0</span></p>
-      </div>
-      <form id="checkout-form">
-        <h2>Order Details</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" required />
-        <label for="address">Address:</label>
-        <input type="text" id="address" required />
-        <button type="submit">Submit Order</button>
-      </form>
     </div>
+    <div id="checkOut">
+      <button id="btnCheckout">Checkout</button>
+      <div id="custDetails">
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" id="name" />
 
-    <script src="./script/checkout.js"></script>
+          <label for="address">Address</label>
+          <input type="text" id="address" />
+
+          <label for="mobile">Mobile</label>
+          <input type="text" id="mobile" />
+
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" />
+
+          <label for="cardExpiry">Expiry</label>
+          <input type="text" id="cardExpiry" />
+
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" />
+          <button id="payment">Confirm to Pay</button>
+        </form>
+      </div>
+    </div>
   </body>
+  <script src="./script/checkout.js"></script>
 </html>

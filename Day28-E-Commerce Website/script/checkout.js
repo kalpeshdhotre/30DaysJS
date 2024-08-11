@@ -1,82 +1,81 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const cartItemsTableBody = document.querySelector("#cart-items tbody");
-  const totalQuantitySpan = document.getElementById("total-quantity");
-  const totalAmountSpan = document.getElementById("total-amount");
-  const checkoutForm = document.getElementById("checkout-form");
+const cartArray = JSON.parse(localStorage.getItem("cartArray"));
+const stockArray = JSON.parse(localStorage.getItem("stockArray"));
+const checkout = document.getElementById("btnCheckout");
+const custDetailForm = document.getElementById("custDetails");
+const payment = document.getElementById("payment");
+console.log(cartArray);
+console.log(stockArray);
 
-  // Retrieve cartArray from localStorage
-  const cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
+function populateCart() {
+  const container = document.querySelector(".cart-container tbody");
+  let finalTotal = 0;
+  container.innerHTML = "";
+  cartArray.forEach((element, index) => {
+    const cartRow = document.createElement("tr");
+    cartRow.innerHTML = `
+      <td class="prdImageName">
+        <span><img src="${stockArray[element.stockItemIndex].image}" alt="" /></span>${stockArray[element.stockItemIndex].name}
+      </td>
+      <td class="qtyControls">
+  <div class="qtyWrapper">
+    <i class="fa-solid fa-plus add-qty" data-index="${index}"></i>
+    <span id="qty" data-index="${index}">${element.qty}</span>
+    <i class="fa-solid fa-minus reduce-qty" data-index="${index}"></i>
+    <i class="fa-solid fa-trash delete-item" data-index="${index}"></i>
+  </div>
+</td>
+      <td>${stockArray[element.stockItemIndex].price}</td>
+      <td>${stockArray[element.stockItemIndex].price * element.qty}</td>
+    `;
+    container.appendChild(cartRow);
+    finalTotal += stockArray[element.stockItemIndex].price * element.qty;
+  });
+  const totalRow = document.createElement("tr");
+  totalRow.innerHTML = `
+    <td colspan="3" style="text-align: right;">Final Total:</td>
+    <td id="finalTotal">$${finalTotal}</td>
+  `;
+  container.appendChild(totalRow);
+  document.querySelectorAll(".add-qty").forEach((icon) => icon.addEventListener("click", handleAddQty));
+  document.querySelectorAll(".reduce-qty").forEach((icon) => icon.addEventListener("click", handleReduceQty));
+  document.querySelectorAll(".delete-item").forEach((icon) => icon.addEventListener("click", handleDeleteItem));
+}
 
-  function updateCart() {
-    cartItemsTableBody.innerHTML = "";
-    let totalQuantity = 0;
-    let totalAmount = 0;
+function handleAddQty(event) {
+  const index = event.target.getAttribute("data-index");
+  cartArray[index].qty += 1;
+  populateCart();
+}
+populateCart();
 
-    cartArray.forEach((item, index) => {
-      const stockItem = stockArray[item.stockItemIndex];
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-        <td>${stockItem.name}</td>
-        <td>Rs. ${stockItem.price}</td>
-        <td>
-          <button class="btn-decrease" data-index="${index}">-</button>
-          ${item.qty}
-          <button class="btn-increase" data-index="${index}">+</button>
-        </td>
-        <td>Rs. ${item.qty * stockItem.price}</td>
-        <td><button class="btn-delete" data-index="${index}">Delete</button></td>
-      `;
-
-      cartItemsTableBody.appendChild(row);
-
-      totalQuantity += item.qty;
-      totalAmount += item.qty * stockItem.price;
-    });
-
-    totalQuantitySpan.textContent = totalQuantity;
-    totalAmountSpan.textContent = totalAmount;
+function handleReduceQty(event) {
+  const index = event.target.getAttribute("data-index");
+  if (cartArray[index].qty > 1) {
+    cartArray[index].qty -= 1;
+    populateCart();
   }
+}
 
-  function handleCartActions(event) {
-    const target = event.target;
-    const index = target.getAttribute("data-index");
+function handleDeleteItem(event) {
+  console.log("hello from delete");
 
-    if (target.classList.contains("btn-decrease")) {
-      if (cartArray[index].qty > 1) {
-        cartArray[index].qty -= 1;
-      } else {
-        cartArray.splice(index, 1); // Remove item if qty is 0
-      }
-      localStorage.setItem("cartArray", JSON.stringify(cartArray));
-      updateCart();
-    } else if (target.classList.contains("btn-increase")) {
-      cartArray[index].qty += 1;
-      localStorage.setItem("cartArray", JSON.stringify(cartArray));
-      updateCart();
-    } else if (target.classList.contains("btn-delete")) {
-      cartArray.splice(index, 1); // Remove item
-      localStorage.setItem("cartArray", JSON.stringify(cartArray));
-      updateCart();
-    }
-  }
+  const index = event.target.getAttribute("data-index");
+  cartArray.splice(index, 1); // Remove the item from the cart
+  populateCart();
+}
 
-  function handleCheckoutForm(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const address = document.getElementById("address").value;
+checkout.addEventListener("click", () => {
+  custDetailForm.style.visibility = "visible";
+});
 
-    alert(`Order Submitted!\nName: ${name}\nAddress: ${address}\nThank you for your purchase!`);
+payment.addEventListener("click", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const totalItems = cartArray.reduce((acc, item) => acc + item.qty, 0);
+  const totalPrice = document.getElementById("finalTotal").innerText;
+  console.log(totalPrice);
 
-    // Clear cart
-    localStorage.removeItem("cartArray");
-    window.location.href = "index.html"; // Redirect to home page or elsewhere
-  }
+  alert(`Dear ${name}, your order for ${totalItems} item(s) of Rs. ${totalPrice} is confirmed`);
 
-  // Initialize cart display
-  updateCart();
-
-  // Event listeners
-  cartItemsTableBody.addEventListener("click", handleCartActions);
-  checkoutForm.addEventListener("submit", handleCheckoutForm);
+  window.location.href = "index.html";
 });

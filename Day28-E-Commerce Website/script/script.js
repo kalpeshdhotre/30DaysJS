@@ -124,6 +124,7 @@ function updateCartTotal(total) {
 cartIcon.addEventListener("click", function (event) {
   event.preventDefault();
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
+  localStorage.setItem("stockArray", JSON.stringify(stockArray));
   window.location.href = "checkout.html";
 });
 

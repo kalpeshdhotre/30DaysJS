@@ -117,7 +117,7 @@ body {
 .fade-slides {
   display: flex;
   width: 100%; /* 100% per image for 3 images */
-  /* animation: slide 19s infinite; */
+  animation: slide 13s infinite;
 }
 
 .fade-slides img {
@@ -198,4 +198,147 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #454545;
+}
+
+.cart-container,
+#checkOut {
+  /* border: 2px solid #ccc; */
+  padding: 20px;
+  background-color: #fff;
+  margin: 25px auto;
+  width: 85vw;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Sintony";
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e0e0e0;
+}
+
+.cart-container img {
+  width: 80px;
+}
+
+.prdImageName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prdImageName img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: cover;
+}
+
+#checkOut {
+  text-align: center;
+  background: #f9f9f9;
+}
+#btnCheckout {
+  width: 200px;
+  height: 40px;
+  font-family: "Sintony";
+  font-size: 15px;
+}
+
+/* Customer Details section formartting */
+
+#custDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  background-color: #f9f9f9;
+  padding: 20px;
+  visibility: hidden;
+}
+
+#custDetails form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  font-family: "Sintony";
+}
+
+#custDetails label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+}
+
+#custDetails input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#custDetails button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#custDetails button:hover {
+  background-color: #0056b3;
+}
+
+.qtyControls {
+  text-align: center; /* Center the content horizontally */
+}
+
+.qtyWrapper {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  gap: 5px; /* Add gap between elements */
+}
+
+.qtyWrapper i {
+  cursor: pointer; /* Make icons clickable */
+  padding: 5px; /* Add padding around the icons */
+}
+
+.qtyWrapper span {
+  margin: 0 5px; /* Add margin around the quantity text */
+  min-width: 30px; /* Set a minimum width for the quantity text */
+  text-align: center; /* Center the quantity text */
+}
+
+.add-qty,
+.reduce-qty {
+  border: solid 1px black;
+}
+
+.delete-item {
+  color: red;
+  margin-left: 10px;
 }
