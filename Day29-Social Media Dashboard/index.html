@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sliding Sidebar</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/c1360362d9.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="sidebar" class="sidebar">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"><i class="ri-arrow-go-back-fill"></i></a>
+			<a id="openPostForm" href="#">POST</a>
+			<a href="#">SETTINGS</a>
+			<a href="#">USERS</a>
+		</div>
+
+		<div id="main">
+			<button class="openbtn" onclick="openSidebar()">
+				<span><i class="ri-settings-4-line"></i></span> More Options
+			</button>
+		</div>
+
+		<div id="popupOverlay" class="hide">
+			<div id="createPost">
+				<form id="postForm" action="">
+					<div id="imagePreview">Click to select an image</div>
+					<input type="file" id="fileInput" accept="image/*" style="display: none" />
+					<input id="descriptionInput" type="text" placeholder="Enter your text here" />
+					<button type="submit">Post</button>
+					<button type="button" id="closePostForm">Close</button>
+				</form>
+			</div>
+		</div>
+
+		<script src="./js/script.js"></script>
+	</body>
+</html>
