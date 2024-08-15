@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Sintony:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+body {
+	background-color: #454545;
+	height: 100%;
+	margin: 0;
+	color: #bbb;
+	margin-bottom: 30px;
+}
+
+/* #region CSS for login section */
+#userLogin {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	font-family: "Sintony";
+}
+
+#userName,
+#userPassword {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	border: none;
+	padding-left: 10px;
+	font-size: 18px;
+	font-family: "Sintony";
+}
+
+#userSignInForm,
+#userSignUpForm {
+	border: 1px solid rgb(122, 122, 122);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: "Sintony";
+}
+
+#userLogin input[type="submit"] {
+	width: 100px;
+	height: 40px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	border: none;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "Sintony";
+}
+/* #endregion */
+
+/* #region CSS for signup section */
+
+.signupOverlay {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+	z-index: 1; /* Sit on top */
+}
+
+/* Overlay content */
+.signupOverlay-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	text-align: center;
+	width: 400px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.close-btn,
+.submit-btn {
+	color: #aaa;
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.submit-btn:hover,
+.submit-btn:focus {
+	color: black;
+}
+
+#userSignUPForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: "Sintony";
+	font-size: 18px;
+}
+
+.signup-username,
+.signup-password {
+	width: 300px;
+	height: 40px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	/* border: none; */
+	padding-left: 10px;
+	font-size: 18px;
+	font-family: "Sintony";
+	text-align: center;
+}
+
+/* #endregion */

@@ -5,10 +5,11 @@ body {
 	height: 100%;
 	margin: 0;
 	color: #bbb;
+	margin-bottom: 30px;
 }
 /* #region CSS for sidebar section */
 body {
-	font-family: "Lato", sans-serif;
+	font-family: "Sintony", sans-serif;
 }
 
 .sidebar {
@@ -28,12 +29,19 @@ body {
 	text-decoration: none;
 	font-size: 25px;
 	color: #818181;
-	display: block;
+	display: flex;
 	transition: 0.3s;
+	/* align-content: center; */
+	gap: 10px;
+}
+
+.sidebar a span {
+	display: flex;
+	align-items: center;
 }
 
 .sidebar a:hover {
-	color: #f1f1f1;
+	color: yellow;
 }
 
 .sidebar .closebtn {
@@ -42,6 +50,7 @@ body {
 	right: 25px;
 	font-size: 36px;
 	margin-left: 50px;
+	color: red;
 }
 
 .openbtn {
@@ -54,10 +63,14 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	border-radius: 8px;
+	color: #818181;
+	font-family: "Sintony";
 }
 .openbtn span {
 	display: flex;
 	align-items: center;
+	color: yellow;
 }
 
 #main {
@@ -66,54 +79,6 @@ body {
 }
 
 /* #endregion  CSS for sidebar section */
-
-/* #region CSS for login section */
-#userLogin {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	width: 100vw;
-	font-family: "Sintony";
-}
-
-#userName,
-#userPassword {
-	width: 300px;
-	height: 50px;
-	margin-bottom: 15px;
-	border-radius: 10px;
-	border: none;
-	padding-left: 10px;
-	font-size: 18px;
-	font-family: "Sintony";
-}
-
-#userSignInForm,
-#userSignUpForm {
-	border: 1px solid rgb(122, 122, 122);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 20px;
-	padding: 20px;
-	border-radius: 10px;
-	font-family: "Sintony";
-}
-
-#userLogin input[type="submit"] {
-	width: 100px;
-	height: 40px;
-	margin-bottom: 15px;
-	border-radius: 10px;
-	border: none;
-	padding-left: 10px;
-	font-size: 15px;
-	font-family: "Sintony";
-}
-/* #endregion */
 
 /* #region CSS for New Post */
 #popupOverlay {
@@ -167,4 +132,98 @@ input[type="text"] {
 	margin-bottom: 15px;
 }
 
+/* #endregion */
+
+/* #region CSS for posts listing*/
+#postsContainer {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.post {
+	background: #1e1e1e;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 700px;
+	display: flex;
+	flex-direction: column;
+	font-family: "Sintony";
+	color: #fff;
+}
+
+.post img {
+	max-width: 700px;
+	object-fit: cover;
+	height: auto;
+	margin-bottom: 15px;
+	align-self: center;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	gap: 10px;
+	font-size: 25px;
+	color: #ffffff;
+}
+.post h5 {
+	font-family: "Ubuntu";
+	font-weight: 300;
+	color: #999999;
+}
+/* #endregion */
+
+/* #region CSS for comment overlay */
+
+.overlay {
+	display: none; /* Hidden by default */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	height: 250px;
+	gap: 10px;
+}
+
+/* #commentOverlay {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+} */
+
+#commentOverlay textarea {
+	height: 300px;
+	border-radius: 10px;
+	border: none;
+	padding-left: 10px;
+	font-size: 18px;
+	font-family: "Sintony";
+	text-align: left;
+	border: 2px solid #ccc;
+}
 /* #endregion */

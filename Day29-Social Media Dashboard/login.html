@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Social Media App</title>
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/login.css" />
 	</head>
 	<body>
 		<div id="userLogin">
@@ -18,8 +18,21 @@
 					<input type="submit" value="Login" />
 				</form>
 			</div>
-			<a href="#" id="toggle-forms">Don't have an account? Sign Up</a>
+			<a href="#" id="toggle-forms" style="color: aqua">Don't have an account? Sign Up</a>
 		</div>
-		<script src="./js/script.js"></script>
+		<div id="signupOverlay" class="signupOverlay">
+			<div class="signupOverlay-content">
+				<form id="userSignUPForm">
+					<h3 style="font-family: Verdana">Create New User Account</h3>
+					<label for="signup-username">Enter Username</label>
+					<input type="text" id="signup-username" class="signup-username" placeholder="" />
+					<label for="signup-password">Enter Password</label>
+					<input type="password" id="signup-password" class="signup-password" placeholder="" />
+					<input class="submit-btn" type="submit" value="Signup" />
+				</form>
+				<button id="cancelSignup" class="close-btn">Cancel</button>
+			</div>
+		</div>
+		<script src="./js/login.js"></script>
 	</body>
 </html>

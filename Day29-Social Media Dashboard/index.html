@@ -3,22 +3,31 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sliding Sidebar</title>
+		<title>Social Media Dashboard</title>
 		<link rel="stylesheet" href="./css/style.css" />
 		<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
 		<script src="https://kit.fontawesome.com/c1360362d9.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div id="sidebar" class="sidebar">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"><i class="ri-arrow-go-back-fill"></i></a>
-			<a id="openPostForm" href="#">POST</a>
-			<a href="#">SETTINGS</a>
-			<a href="#">USERS</a>
+			<a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"><i style="color: yellow" class="ri-close-line"></i></a>
+			<a id="openPostForm" href="#"
+				><span><i class="ri-chat-new-line"></i></span> POST</a
+			>
+			<a href="#"
+				><span><i class="ri-settings-2-line"></i></span> Settings</a
+			>
+			<a href="#"
+				><span><i class="ri-group-line"></i></span> Friends</a
+			>
+			<a id="exit" href="#"
+				><span><i class="ri-group-line"></i></span> Exit</a
+			>
 		</div>
 
 		<div id="main">
 			<button class="openbtn" onclick="openSidebar()">
-				<span><i class="ri-settings-4-line"></i></span> More Options
+				<span><i class="ri-emotion-happy-fill"></i></span> Hey, What's New?
 			</button>
 		</div>
 
@@ -27,12 +36,38 @@
 				<form id="postForm" action="">
 					<div id="imagePreview">Click to select an image</div>
 					<input type="file" id="fileInput" accept="image/*" style="display: none" />
-					<input id="descriptionInput" type="text" placeholder="Enter your text here" />
+					<input id="descriptionInput" type="text" placeholder="hey say something..." />
 					<button type="submit">Post</button>
 					<button type="button" id="closePostForm">Close</button>
 				</form>
 			</div>
 		</div>
+		<div id="postsContainer">
+			<!-- <div class="post">
+				<h5><span style="text-transform: uppercase">User</span> - <span style="font-family: Abel">Time</span></h5>
+				<img src="${allPost.imagePath}" alt="Post Image" />
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi officiis ea doloribus saepe sunt dolores libero minus dolor rerum placeat. Dolor porro rerum beatae culpa?</p>
+				<div class="icons">
+					<i class="ri-heart-line"></i>
+					<i class="ri-chat-1-line"></i>
+
+					<i class="ri-share-forward-line"></i>
+					<i class="ri-bookmark-line"></i>
+				</div>
+				<h4 class="likeCount"><span>0</span> likes</h4>
+				<div class="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, aut!</div>
+			</div> -->
+		</div>
+
+		<!-- Comment addd overlay window by default hidden -->
+		<div id="commentOverlay" class="overlay">
+			<div class="overlay-content">
+				<textarea id="commentInput" placeholder="Enter your comment here..."></textarea>
+				<button class="btn" onclick="submitComment()">Submit</button>
+				<button class="btn" onclick="closeOverlay()">Cancel</button>
+			</div>
+		</div>
+		<!-- Comment addd overlay window by default hidden -->
 
 		<script src="./js/script.js"></script>
 	</body>
